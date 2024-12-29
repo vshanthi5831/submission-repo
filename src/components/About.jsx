@@ -48,8 +48,8 @@ export default function About() {
               <div className="accordion-body">
                 <ul>
                   <li>Dark/Light Mode Toggle</li>
-                  <li>Interactive Product List with Filters</li>
-                  <li>Chatbot for User Assistance</li>
+                  <li>Interactive Product List with Summation</li>
+                  <li>Slide bar for User Assistance</li>
                   <li>Responsive Design with Bootstrap</li>
                   <li>Login and User Authentication</li>
                 </ul>

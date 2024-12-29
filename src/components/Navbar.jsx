@@ -69,7 +69,7 @@ const Navbar = ({ darkMode, handleMode, toggleSidebar }) => {
               {/* Button to Open Sidebar */}
               <div className="d-flex">
                 <button onClick={toggleSidebar} className="btn btn-outline-dark">
-                  ☰ Open Sidebar
+                  ☰ Slide-It
                 </button>
               </div>
             </div>
