@@ -251,50 +251,49 @@ nav a {
 .sidebar {
   position: fixed;
   top: 0;
-  left: -250px; /* Initially hidden */
+  left: 0;
   width: 250px;
-  height: 100%;
-  background-color: #1f4785; /* Primary Blue for dark mode */
-  color: white;
-  transition: left 0.3s ease-in-out; /* Smooth transition for sidebar */
+  height: 100vh; /* Full viewport height */
+  overflow-y: auto; /* Makes it scrollable */
+  background-color: #fff; /* Change according to your theme */
   padding: 20px;
-  z-index: 1000;
+  transition: transform 0.3s ease;
+  transform: translateX(-100%); /* Initially off-screen */
 }
 
-.sidebar.open {
-  left: 0; /* Show when open */
+.sidebar.dark {
+  background-color: #333; /* Dark theme */
+  color: #fff;
 }
 
 .sidebar.light {
-  background-color: #87c3e8; /* Lighter Blue for light mode */
+  background-color: #fff; /* Light theme */
+  color: #000;
 }
 
-.sidebar .close-btn {
-  background: none;
-  color: white;
-  border: none;
-  font-size: 20px;
-  cursor: pointer;
-  margin-bottom: 20px;
+.sidebar.open {
+  transform: translateX(0); /* Sidebar visible when open */
 }
 
+.sidebar.closed {
+  transform: translateX(-100%); /* Sidebar off-screen when closed */
+}
+
+/* Hover effect for list items under News and Deals */
 .sidebar h3 {
-  font-size: 18px;
-  margin-bottom: 15px;
-}
-
-.sidebar ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.sidebar ul li {
+  font-size: 1.2em;
   margin-bottom: 10px;
 }
 
-/* Optional: Add smooth hover effects for items in the sidebar */
-.sidebar ul li:hover {
+.sidebar ul li {
+  list-style: none;
+  margin: 5px 0;
+  font-size: 1em;
   cursor: pointer;
-  color: #f4f4f4;
-  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.sidebar ul li:hover {
+  text-decoration: underline; /* Underline on hover */
+  color: #007bff; /* Optional: Change color on hover */
 }

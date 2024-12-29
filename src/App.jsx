@@ -8,16 +8,15 @@ import Home from './components/Home';
 import Sidebar from './components/Sidebar'; // Import Sidebar
 
 const App = () => {
-  // Load dark mode preference from localStorage on page load
   const savedMode = localStorage.getItem('darkMode') === 'true';
   const [darkMode, setDarkMode] = useState(savedMode);
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false); // Sidebar state
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [cart, setCart] = useState([]);
 
-  // Update dark mode in localStorage whenever it changes
   const handleMode = () => {
     setDarkMode((prevMode) => {
       const newMode = !prevMode;
-      localStorage.setItem('darkMode', newMode); // Save the new dark mode preference
+      localStorage.setItem('darkMode', newMode);
       return newMode;
     });
   };
@@ -32,23 +31,43 @@ const App = () => {
     }
   }, [darkMode]);
 
-  // Function to toggle sidebar visibility
-  const toggleSidebar = () => {
-    setIsSidebarOpen(!isSidebarOpen);
+const toggleSidebar = () => {
+  setIsSidebarOpen(!isSidebarOpen); // Toggle the sidebar visibility
+};
+
+
+  // Add product to cart
+  const addToCart = (product) => {
+    setCart((prevCart) => [...prevCart, product]);
   };
+
+  // Remove product from cart
+  const removeFromCart = (productId) => {
+    setCart((prevCart) => prevCart.filter((item) => item.id !== productId));
+  };
+
+  // Calculate total price (only once here)
+  const totalPrice = cart.reduce((total, product) => total + product.price, 0);
 
   return (
     <Router>
       <div className="App">
         <Navbar darkMode={darkMode} handleMode={handleMode} toggleSidebar={toggleSidebar} />
-        
-        {/* Sidebar */}
-        <Sidebar isOpen={isSidebarOpen} darkMode={darkMode} toggleSidebar={toggleSidebar} />
+        <Sidebar 
+          isOpen={isSidebarOpen} 
+          darkMode={darkMode} 
+          toggleSidebar={toggleSidebar} 
+          cart={cart} 
+          totalPrice={totalPrice} 
+        />
         
         <Routes>
           <Route path="/home" element={<Home darkMode={darkMode} />} />
           <Route path="/about" element={<About />} />
-          <Route path="/products" element={<Products darkMode={darkMode} handleMode={handleMode} />} />
+          <Route 
+            path="/products" 
+            element={<Products darkMode={darkMode} addToCart={addToCart} removeFromCart={removeFromCart} />} 
+          />
           <Route
             path="/login"
             element={<Login darkMode={darkMode} setIsAuthenticated={() => {}} handleMode={handleMode} />}
