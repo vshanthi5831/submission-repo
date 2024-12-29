@@ -1,0 +1,248 @@
+/* General */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  margin: 0;
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+}
+
+/* Navbar */
+nav {
+  width: 100%;
+  max-width: 1200px;
+  margin: 20px;
+  background-color: rgba(87, 213, 236, 0.7); /* Lighter Blue */
+  color: white;
+  padding-top: 10%;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+}
+
+nav li {
+  padding: 10px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Light/Dark Mode Backgrounds */
+.bg-light-custom {
+  background-color: rgba(87, 213, 236, 0.5); /* Light Blue */
+  transition: background-color 0.3s ease;
+}
+
+.bg-dark-custom {
+  background-color: rgba(28, 70, 98, 0.8); /* Dark Blue */
+  transition: background-color 0.3s ease;
+}
+
+/* Accordion Styling */
+.accordion-button {
+  background-color: rgba(87, 213, 236, 0.5); /* Light Blue */
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.accordion-button:hover {
+  background-color: rgba(28, 70, 98, 0.8); /* Dark Blue */
+}
+
+.accordion-button.collapsed {
+  background-color: rgba(28, 70, 98, 0.8); /* Dark Blue */
+}
+
+.accordion-body {
+  background-color: #f1f1f1;
+}
+
+/* Button Styling */
+.btn-primary {
+  background-color: #1f4785; /* Primary Blue */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.btn-primary:hover {
+  background-color: #144690; /* Darker Blue */
+}
+
+/* Smooth Hover Effects for Cards */
+.product-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+  gap: 20px; /* Space between cards */
+  padding: 20px;
+  justify-content: center;
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column; /* Stacks image and info vertically */
+  height: 400px; /* Fixed height for uniformity */
+  background-color: white; /* White background for the upper part */
+  border: 1px solid rgba(28, 70, 98, 0.8); /* Border for distinction */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: scale(1.05); /* Slight hover effect */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.product-image {
+  flex: 2; /* Takes up 2/3 of the card height */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-bottom: 1px solid rgba(28, 70, 98, 0.3); /* Divider between image and info */
+}
+
+.product-info {
+  flex: 1; /* Takes up 1/3 of the card height */
+  padding: 15px;
+  text-align: center;
+  background-color: rgba(87, 213, 236, 0.2); /* Subtle light blue background for info */
+}
+
+.product-info h2 {
+  margin: 0 0 10px;
+  font-size: 18px;
+  color: #1f4785; /* Primary Blue */
+}
+
+.product-info p {
+  margin: 5px 0;
+  color: #333;
+}
+
+/* Login Box */
+.login-box {
+  width: 300px;
+  padding: 30px;
+  margin: 100px auto;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-box h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+.login-box form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.login-box input {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  color: #333;
+}
+
+.login-box button {
+  padding: 10px;
+  background-color: #1f4785; /* Primary Blue */
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.login-box button:hover {
+  background-color: #10608c; /* Darker Blue */
+}
+
+.login-box input:focus {
+  border-color: #94b0cf;
+  outline: none;
+}
+
+.text-light {
+  color: #fff;
+}
+
+.text-dark {
+  color: #000;
+}
+
+/* Dark Mode Styling */
+.login-box.bg-dark-custom {
+  background-color: #1e3a5a; /* Darker Blue */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+.login-box h2 {
+  color: #fff;
+}
+
+.login-box input {
+  background-color: #8c9eaf;
+  border: 1px solid #7f8c8d;
+  color: #fff;
+}
+
+.login-box button {
+  background-color: #144690; /* Blue for Dark Mode */
+  border: 1px solid #7f8c8d;
+}
+
+.login-box button:hover {
+  background-color: #0bb411; /* Slight Green for Hover */
+}
+
+/* Light Mode Styling */
+.light-mode {
+  background-color: #eaf6fc; /* Very light blue */
+  color: #2b3a67; /* Darker blue text */
+}
+
+.product-card.light-card {
+  background-color: #d0e8f5; /* Light sky blue */
+  border: 1px solid #87c3e8; /* Subtle blue border */
+}
+
+.product-card.light-card .product-info {
+  background-color: #a8d5f2; /* Light blue for the info section */
+  color: #1f3359; /* Darker blue text */
+}
+
+/* Dark Mode Styling */
+.dark-mode {
+  background-color: #12233c; /* Deep dark blue */
+  color: #b0c7e5; /* Light bluish text */
+}
+
+.product-card.dark-card {
+  background-color: #1c3a59; /* Dark navy blue */
+  border: 1px solid #36638a; /* Subtle navy border */
+}
+
+.product-card.dark-card .product-info {
+  background-color: #244e73; /* Darker blue for the info section */
+  color: #b0c7e5; /* Lighter blue text */
+}
