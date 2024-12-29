@@ -1,3 +1,5 @@
+Hop-E-DON
+
 Hop-E-DON - React E-Commerce Platform
 Welcome to Hop-E-DON, your ultimate shopping destination! This project is built with React and Vite to provide a fast and dynamic user experience. It includes modern features like dark mode/light mode toggle, responsive layout, and a fully functional accordion section for easy navigation.
 
