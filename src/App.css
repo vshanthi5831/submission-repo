@@ -246,3 +246,55 @@ nav a {
   background-color: #244e73; /* Darker blue for the info section */
   color: #b0c7e5; /* Lighter blue text */
 }
+
+/* Sidebar Styling */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px; /* Initially hidden */
+  width: 250px;
+  height: 100%;
+  background-color: #1f4785; /* Primary Blue for dark mode */
+  color: white;
+  transition: left 0.3s ease-in-out; /* Smooth transition for sidebar */
+  padding: 20px;
+  z-index: 1000;
+}
+
+.sidebar.open {
+  left: 0; /* Show when open */
+}
+
+.sidebar.light {
+  background-color: #87c3e8; /* Lighter Blue for light mode */
+}
+
+.sidebar .close-btn {
+  background: none;
+  color: white;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.sidebar h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin-bottom: 10px;
+}
+
+/* Optional: Add smooth hover effects for items in the sidebar */
+.sidebar ul li:hover {
+  cursor: pointer;
+  color: #f4f4f4;
+  text-decoration: underline;
+}
